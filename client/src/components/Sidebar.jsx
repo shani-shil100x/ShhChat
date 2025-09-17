@@ -19,6 +19,10 @@ const Sidebar = () => {
 
   const [input, setInput] = useState(false);
 
+  // ----------------- MARK CHANGE 1 -----------------
+  // Added state to toggle menu on mobile
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const navigate = useNavigate();
 
   //  i do changes in this code filteredUsers
@@ -46,6 +50,7 @@ const Sidebar = () => {
               src={assets.menu_icon}
               alt="Menu"
               className="max-h-5 cursor-pointer"
+              onClick={() => setMenuOpen(!menuOpen)} // Mobile toggle
             />
             <div className="absolute top-full right-0 z-20 w-32 p-5 rounded-md bg-[#282142] border border-gray-600 text-gray-600 hidden group-hover:block">
               <p
@@ -68,6 +73,7 @@ const Sidebar = () => {
           <img src={assets.search_icon} alt="Search" className="w-3" />
           <input
             onChange={(e) => setInput(e.target.value)}
+            value={input} // ----------------- MARK CHANGE 3
             type="text"
             className="bg-transparent border-none outline-none text-white text-xs placeholder-[#c8c8c8] flex-1"
             placeholder="Search User...."
