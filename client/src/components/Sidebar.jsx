@@ -43,7 +43,7 @@ const Sidebar = () => {
       <div className="pb-5">
         <div className="flex items-center justify-between">
           <img src={assets.logo} alt="logo" className="max-w-40" />
-          
+
           {/* ----------------- MARK CHANGE 2 ----------------- */}
           {/* Desktop hover + mobile click combined */}
           <div className="relative py-2 group">
@@ -53,7 +53,7 @@ const Sidebar = () => {
               className="max-h-5 cursor-pointer"
               onClick={() => setMenuOpen(!menuOpen)} // Mobile toggle
             />
-            
+
             {/* Desktop hover */}
             <div className="absolute top-full right-0 z-20 w-32 p-5 rounded-md bg-[#282142] border border-gray-600 text-gray-600 hidden group-hover:block">
               <p
